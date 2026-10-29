@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Legal and site pages",
+    "description": "Privacy, terms, booking help and other named content pages."
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title", "required": true },
+    "about": { "type": "component", "repeatable": false, "component": "sections.about" },
+    "contact": { "type": "component", "repeatable": false, "component": "sections.contact" },
+    "faq": { "type": "component", "repeatable": false, "component": "sections.faq" },
+    "pricing": { "type": "component", "repeatable": false, "component": "sections.pricing" },
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+  }
+}

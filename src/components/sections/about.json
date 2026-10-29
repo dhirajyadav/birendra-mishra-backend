@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_about",
+  "info": {
+    "displayName": "About section",
+    "description": "About heading, subtitle, narrative paragraphs, three highlights, engagement text, and benefit rows."
+  },
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string", "required": true },
+    "description": { "type": "text" },
+    "body": { "type": "richtext" },
+    "primaryButtonText": { "type": "string" },
+    "primaryButtonUrl": { "type": "string" },
+    "secondaryButtonText": { "type": "string" },
+    "secondaryButtonUrl": { "type": "string" },
+    "items": { "type": "component", "repeatable": true, "component": "shared.item" }
+  }
+}

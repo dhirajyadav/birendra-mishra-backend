@@ -1,0 +1,84 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "siteName": {
+      "type": "string",
+      "default": "Birendra Mishra"
+    },
+    "hero": {
+      "type": "component",
+      "component": "sections.hero",
+      "repeatable": false
+    },
+    "pillars": {
+      "type": "component",
+      "component": "sections.pillars",
+      "repeatable": false
+    },
+    "about": {
+      "type": "component",
+      "component": "sections.about",
+      "repeatable": false
+    },
+    "expertise": {
+      "type": "component",
+      "component": "sections.expertise",
+      "repeatable": false
+    },
+    "services": {
+      "type": "component",
+      "component": "sections.services",
+      "repeatable": false
+    },
+    "philosophy": {
+      "type": "component",
+      "component": "sections.philosophy",
+      "repeatable": false
+    },
+    "pricing": {
+      "type": "component",
+      "component": "sections.pricing",
+      "repeatable": false
+    },
+    "approach": {
+      "type": "component",
+      "component": "sections.approach",
+      "repeatable": false
+    },
+    "insights": {
+      "type": "component",
+      "component": "sections.insights",
+      "repeatable": false
+    },
+    "faq": {
+      "type": "component",
+      "component": "sections.faq",
+      "repeatable": false
+    },
+    "contact": {
+      "type": "component",
+      "component": "sections.contact",
+      "repeatable": false
+    },
+    "siteChrome": {
+      "type": "component",
+      "component": "shared.site-chrome",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_items",
+  "info": {
+    "displayName": "Section item",
+    "description": "Reusable item for a card, FAQ, about highlight, link, or consultation. Fill only fields used by that section."
+  },
+  "attributes": {
+    "title": { "type": "string", "description": "Card heading, FAQ question, link label, or consultation name." },
+    "number": { "type": "string", "description": "Optional visible number for pillar cards, for example 01 or A1." },
+    "description": { "type": "text", "description": "Card copy, FAQ answer, link destination for navigation items, or consultation summary." },
+    "body": { "type": "richtext", "description": "Optional longer formatted copy when the section supports it." },
+    "label": { "type": "string", "description": "Optional short label displayed above or beside the value." },
+    "value": { "type": "string", "description": "Optional short value, such as a statistic or contact detail." },
+    "url": { "type": "string", "description": "Optional destination URL for a card or link." },
+    "slug": { "type": "uid", "targetField": "title" },
+    "order": { "type": "integer", "default": 0, "description": "Display order, starting at zero." },
+    "featured": { "type": "boolean", "default": false },
+    "consultationId": { "type": "string", "description": "Booking identifier; used only for pricing consultation cards." },
+    "durationMinutes": { "type": "integer", "description": "Consultation duration in minutes." },
+    "fee": { "type": "decimal", "description": "Consultation fee as a number; use feeLabel when there is no fixed fee." },
+    "feeLabel": { "type": "string", "description": "Display instead of a fixed fee, for example Complimentary or By enquiry." },
+    "bookable": { "type": "boolean", "default": true, "description": "Whether the visitor can book this consultation online." },
+    "paymentLink": { "type": "string", "description": "Optional secure payment URL for this consultation." },
+    "colour": { "type": "string", "description": "Pricing card theme key, such as gold, navy, ink, or accent." },
+    "buttonText": { "type": "string", "description": "Optional label for a pricing card action button." },
+    "buttonUrl": { "type": "string", "description": "Optional destination for a pricing card action button." }
+  }
+}

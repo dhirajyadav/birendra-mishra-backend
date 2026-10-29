@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_pricings",
+  "info": {
+    "displayName": "Pricing section",
+    "description": "Homepage and booking page pricing headings, introduction, disclaimer, and consultation cards."
+  },
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string", "required": true },
+    "description": { "type": "text" },
+    "disclaimer": { "type": "text" },
+    "body": { "type": "richtext" },
+    "items": { "type": "component", "repeatable": true, "component": "shared.item" }
+  }
+}

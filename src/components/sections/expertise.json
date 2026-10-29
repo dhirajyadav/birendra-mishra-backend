@@ -1,0 +1,1 @@
+{ "collectionName": "components_sections_expertise", "info": { "displayName": "Expertise section" }, "attributes": { "eyebrow": { "type": "string" }, "heading": { "type": "string", "required": true }, "description": { "type": "text" }, "body": { "type": "richtext" }, "items": { "type": "component", "repeatable": true, "component": "shared.item" } } }
