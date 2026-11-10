@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_article_blocks_cta_buttons",
+  "info": {
+    "displayName": "CTA Button",
+    "icon": "mouse-pointer"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": ["primary", "outline"],
+      "default": "primary"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
+

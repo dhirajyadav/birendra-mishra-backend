@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_tag_badges",
+  "info": {
+    "displayName": "Tag Badge",
+    "icon": "priceTag"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}
+

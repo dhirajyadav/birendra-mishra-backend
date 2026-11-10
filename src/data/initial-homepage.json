@@ -1,0 +1,308 @@
+{
+  "hero": {
+    "eyebrow": "Strategic Financial Leadership",
+    "titlePrefix": "Clarity for your next",
+    "titleHighlight": "chapter.",
+    "description": "Strategic financial leadership for complex decisions, international growth and enduring enterprise value.",
+    "ctaText": "Explore advisory",
+    "ctaUrl": "#solutions",
+    "focusLabel": "Focus",
+    "focusValue": "Global Financial Strategy",
+    "coreLabel": "Core",
+    "coreValue": "Upstream Oil&Gas Finance,\nM&A and Capital Governance",
+    "experienceLabel": "Experience",
+    "experienceValue": "20+ years international",
+    "engagementLabel": "Engagement",
+    "engagementValue": "Selective Advisory & Board",
+    "discretionLabel": "Discretion",
+    "discretionValue": "Board-level confidentiality",
+    "trustItems": [
+      { "text": "20+ years of international experience" },
+      { "text": "Independent strategic perspective" },
+      { "text": "Confidential executive advisory" }
+    ]
+  },
+  "pillars": {
+    "items": [
+      {
+        "number": "01",
+        "title": "Hands-on, tailor-made advice",
+        "description": "Practical guidance shaped to your organisation’s realities — not generic playbooks."
+      },
+      {
+        "number": "02",
+        "title": "Results-focused execution",
+        "description": "From framework to follow-through: plans that leadership can implement with confidence."
+      },
+      {
+        "number": "03",
+        "title": "20+ years of international experience",
+        "description": "Seasoned perspective across high-growth, high-risk markets and multi-cultural teams."
+      },
+      {
+        "number": "04",
+        "title": "Independence & confidentiality",
+        "description": "Independent thinking for board-level and executive conversations that stay private."
+      }
+    ]
+  },
+  "meetBirendra": {
+    "eyebrow": "Executive Profile",
+    "title": "Senior Executive.",
+    "subheadline": "Global Financial Strategy, M&A and Capital Governance",
+    "photoBadgeText": "Birendra Mishra · Senior Executive",
+    "metric1Value": "20+",
+    "metric1Label": "Years",
+    "metric2Value": "6",
+    "metric2Label": "Countries",
+    "metricHighlightText": "Corporate + Operations",
+    "tagBadges": [
+      {
+        "title": "Global Strategy",
+        "subtitle": "Long-term financial direction"
+      },
+      {
+        "title": "Capital Governance",
+        "subtitle": "Disciplined investment decisions"
+      },
+      {
+        "title": "Executive Leadership",
+        "subtitle": "Cross-border operational experience"
+      }
+    ],
+    "bioParagraph1": "Over more than two decades in international finance and the energy sector, I have built experience across corporate headquarters and complex international operations, with assignments spanning India, Nigeria, Italy, Kenya, South Africa and Iraq.",
+    "bioParagraph2": "My career has encompassed financial leadership, corporate reporting, planning and performance management, joint ventures, governance, capital allocation and transaction support across international upstream oil & gas operations.",
+    "bioParagraph3": "Working across different countries, cultures and organisational settings has taught me to connect corporate strategy with operational realities while maintaining financial discipline and effective governance. Today, that experience shapes how I approach M&A, capital allocation, financial strategy, risk and controls, technology-enabled finance and enterprise performance.",
+    "capabilitiesHeading": "Strategic Capabilities & Value to Organisation",
+    "capabilitiesLead": "I collaborate closely with executive leadership to craft proactive financial frameworks, moving beyond simple financial reporting to accelerate business planning, sustainable expansion, manage international exposure, and maximise the enterprise value.",
+    "capabilityValueCards": [
+      {
+        "title": "Capital Allocation & Budget Stewardship",
+        "description": "Translating corporate ambitions into actionable financial frameworks, ensuring every dollar invested directly supports long-term strategic goals."
+      },
+      {
+        "title": "Corporate Development, M&A & Integration",
+        "description": "Leading financial due diligence for asset acquisitions, designing optimal corporate shareholding structures, and driving seamless post-merger integration to capture synergies quickly and mitigate risk."
+      },
+      {
+        "title": "Risk Mitigation & Enterprise Optimisation",
+        "description": "Establishing risk assessment, implementing modern financial controls, ERP integration, and continuous audit-readiness to protect capital across volatile market cycles."
+      },
+      {
+        "title": "Cross-Border Leadership & Organisational Agility",
+        "description": "Cultivating high-performing, multi-cultural teams that can execute strategy effectively across different regions and regulatory regimes."
+      },
+      {
+        "title": "Complex Governance & Stakeholder Alignment",
+        "description": "Building high-trust partnerships across joint ventures, regulatory bodies, and diverse board-level stakeholders to ensure seamless operational alignment."
+      }
+    ],
+    "philosophyQuote": "“Effective strategic financial leadership relies on vision. It requires building agile frameworks that allow organisations to pivot smoothly, capture emerging market opportunities, and turn complexity into a competitive advantage. Financial leadership is not about backward-looking compliance.”",
+    "connectTitle": "Interested in exploring strategic advisory, board, or corporate finance opportunities? Let's connect.",
+    "connectDescription": "Confidential executive discussions for forward-looking enterprises and boards.",
+    "connectCtaText": "Start a conversation",
+    "connectCtaUrl": "#contact"
+  },
+  "purposeMissionValues": {
+    "eyebrow": "Strategic Foundations",
+    "title": "Purpose, Mission & Values",
+    "lead": "A clear set of principles for how financial leadership, judgement and professional responsibility should be exercised.",
+    "purposeNumber": "01 / PURPOSE",
+    "purposeTitle": "Positive, enduring change",
+    "purposeDescription": "To help create positive, enduring change in the world.",
+    "missionNumber": "02 / MISSION",
+    "missionTitle": "Distinctive, lasting improvement",
+    "missionDescription": "To support organisations in making distinctive, lasting and significant improvements in their overall performance.",
+    "valuesNumber": "03 / VALUES",
+    "valuesTitle": "Professional standards & independence",
+    "valuesDescription": "Adhere to the highest professional and ethical standards; put organisations' interests ahead; preserve confidence and trust; maintain an independent perspective; and manage resources in an optimised, cost-effective manner."
+  },
+  "aspiration": {
+    "eyebrow": "Aspiration",
+    "quote": "“Financial leadership is not merely the recording of the past—it is the strategic design of the future. Ethical financial growth and inclusion, supported by innovation for the human species. In an era accelerated by artificial intelligence and geopolitical realignments, our aspiration is to equip visionary enterprises with resilient capital frameworks, institutional agility, and decisive clarity.”",
+    "pillars": [
+      {
+        "number": "01 / INTELLIGENCE",
+        "title": "AI-Augmented Precision",
+        "description": "Use AI and data to strengthen analysis and decision-making without diluting human accountability."
+      },
+      {
+        "number": "02 / AGILITY",
+        "title": "Cross-Border Agility",
+        "description": "Build financial frameworks capable of responding to changing markets, regulation and operating conditions."
+      },
+      {
+        "number": "03 / STEWARDSHIP",
+        "title": "Enduring Enterprise Value",
+        "description": "Balance growth, resilience and responsible capital stewardship with a long-term perspective."
+      }
+    ]
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "title": "Four strategic pillars where experience meets judgement.",
+    "lead": "Specialised capabilities designed for complex international enterprises, and growth organisations navigating pivotal financial decisions.",
+    "pillars": [
+      {
+        "pillarNumber": "Pillar 01",
+        "watermark": "01",
+        "tag": "Corporate Development & Transactions",
+        "title": "M&A",
+        "slug": "cap-ma",
+        "description": "Supporting corporate development from transaction assessment through financial due diligence, deal review and shareholder structures, integration planning and value realisation. The focus is not simply completing a transaction, but protecting the strategic and financial logic that justified it.",
+        "subbox1Title": "Transaction assessment",
+        "subbox1Description": "Rigorous due diligence, execution perspective, diligence overview, & deal support.",
+        "subbox2Title": "Integration & value capture",
+        "subbox2Description": "Post-merger performance tracking, operational integration, synergies tracking and post-deal accountability."
+      },
+      {
+        "pillarNumber": "Pillar 02",
+        "watermark": "02",
+        "tag": "Applied AI & Financial Automation",
+        "title": "AI in Finance",
+        "slug": "cap-ai",
+        "description": "Applying AI and automation to improve decision quality, analytical depth and execution productivity while maintaining strong governance, controls and human accountability.",
+        "subbox1Title": "Strategy & Corporate Finance",
+        "subbox1Description": "Scenario analysis, recommendations, strategic modelling and execution decision support.",
+        "subbox2Title": "Financial Planning & Analysis",
+        "subbox2Description": "Forecasting, performance insights, management reporting, planning and insight generation."
+      },
+      {
+        "pillarNumber": "Pillar 03",
+        "watermark": "03",
+        "tag": "Capital Frameworks & Stewardship",
+        "title": "Capital Allocation & Governance",
+        "slug": "cap-governance",
+        "description": "Embedding corporate ambition into disciplined capital frameworks that connect strategy, prioritisation, investment thresholds, portfolio reviews, budgeting, and capital governance.",
+        "subbox1Title": "Capital allocation",
+        "subbox1Description": "Prioritisation, investment discipline, portfolio review, effective corporate actions.",
+        "subbox2Title": "Capital governance",
+        "subbox2Description": "Threshold limits, approval framework, stewardship and performance accountability."
+      },
+      {
+        "pillarNumber": "Pillar 04",
+        "watermark": "04",
+        "tag": "Enterprise Risk & Assurance",
+        "title": "Risk & Controls",
+        "slug": "cap-risk",
+        "description": "Building practical financial and enterprise risk frameworks that protect value and ensure audit readiness without creating unnecessary friction. Areas include financial reporting, internal controls assessment, audit readiness, and executive-level governance.",
+        "subbox1Title": "Enterprise risk",
+        "subbox1Description": "Financial & operational risk evaluation & management, risk reports and enterprise plans.",
+        "subbox2Title": "Controls & assurance",
+        "subbox2Description": "Control design, SOX preparation, audit readiness, governance and conformance management."
+      }
+    ]
+  },
+  "insights": {
+    "eyebrow": "Insights",
+    "heading": "The Energy Perspective and Financial strategy",
+    "subheading": "Understanding the business behind the energy headlines.",
+    "lead": "Markets, geopolitics, energy transition and technology matter because of what they mean for capital allocation, financial performance, risk and long-term enterprise value.",
+    "metaNote": "Articles published on LinkedIn, alongside future writing on corporate finance, M&A, FP&A, capital governance and international leadership.",
+    "linkedinBtnText": "LinkedIn profile",
+    "linkedinBtnUrl": "https://www.linkedin.com/",
+    "fallbackCards": [
+      {
+        "tag": "Markets & Geopolitics",
+        "title": "From headline to financial consequence",
+        "description": "Examining how geopolitical events, supply shifts and market structures translate into financial and strategic decisions.",
+        "linkUrl": "https://www.linkedin.com/",
+        "linkLabel": "Read on LinkedIn"
+      },
+      {
+        "tag": "Finance & Investment",
+        "title": "Capital through a CFO lens",
+        "description": "Connecting energy-market developments with investment discipline, cash flow, portfolio choices and enterprise value.",
+        "linkUrl": "https://www.linkedin.com/",
+        "linkLabel": "Read on LinkedIn"
+      },
+      {
+        "tag": "Energy · Technology · Leadership",
+        "title": "Strategy beyond the numbers",
+        "description": "Perspectives on transition, AI, organisational leadership and the decisions shaping the future of the energy business.",
+        "linkUrl": "https://www.linkedin.com/",
+        "linkLabel": "Explore the series"
+      }
+    ]
+  },
+  "advisory": {
+    "eyebrow": "Selective Advisory",
+    "title": "Experience applied to complex decisions.",
+    "callout": "Strategic advice should improve the quality of the decision, not add another layer of process.",
+    "ctaText": "Start a conversation",
+    "ctaUrl": "#contact",
+    "introText": "Designed for organisations and leadership teams seeking an experienced external perspective rather than off-the-shelf consulting packages.",
+    "items": [
+      {
+        "title": "Board, Corporate Finance & Leadership Opportunities",
+        "description": "Selected board, executive, strategic advisory and corporate finance discussions where experience and judgement can add value."
+      },
+      {
+        "title": "M&A, Investment & Capital Allocation",
+        "description": "Transaction assessment, due diligence, investment economics, structures, post m&a integration and value realisation."
+      },
+      {
+        "title": "Strategic Finance & CFO Advisory",
+        "description": "Financial strategy, budgeting, planning, performance, cash discipline, governance and finance-function effectiveness."
+      },
+      {
+        "title": "Governance, Risk & International Exposure",
+        "description": "Controls, audit readiness, stakeholder alignment, joint ventures and complex cross-border environments."
+      },
+      {
+        "title": "Finance Transformation",
+        "description": "AI in Finance adoption, implementation, ERP, automation, financial & management reporting architecture and data-led financial management."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Common questions",
+    "subhead": "Practical details regarding consultation scheduling, confidential discussions, and advisory arrangements.",
+    "isVisible": false,
+    "items": [
+      {
+        "question": "How do advisory discussions begin?",
+        "answer": "Engagements initiate through a confidential enquiry via the contact section below or direct email. This allows an initial assessment of strategic fit, scope, and objectives."
+      },
+      {
+        "question": "How are engagements structured?",
+        "answer": "Arrangements are customized to organizational requirements—ranging from selective board appointments and transaction advisory to ongoing strategic CFO counsel."
+      },
+      {
+        "question": "What is the geographic and international scope?",
+        "answer": "Advisory discussions are conducted internationally across Middle East, UK/Europe, Asia, and North American markets, with deep sector expertise in energy, commodities, infrastructure, and international finance."
+      },
+      {
+        "question": "Is the conversation confidential?",
+        "answer": "Yes. Engagements are handled with independence and confidentiality appropriate to board-level and executive discussions."
+      },
+      {
+        "question": "Do you offer ongoing advisory?",
+        "answer": "Monthly advisory retainers are available by enquiry. Use the contact form or select the retainer option when booking."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Connect",
+    "titleKicker": "Let’s turn complexity into opportunity",
+    "titleMain": "Confidential\nconversations.",
+    "description": "Open to conversations around strategic advisory, board and executive opportunities, corporate finance, and selected collaborations. Share a short note about the context and the discussion you have in mind.",
+    "execName": "Birendra Mishra",
+    "execRole": "Senior Executive | Global Financial Strategy, M&A and Capital Governance",
+    "linkedinBadgeText": "Connect on LinkedIn",
+    "linkedinUrl": "https://www.linkedin.com/",
+    "formNameLabel": "Name",
+    "formNamePlaceholder": "Your name",
+    "formEmailLabel": "Email",
+    "formEmailPlaceholder": "you@company.com",
+    "formTypeLabel": "Enquiry Type",
+    "formMessageLabel": "Message",
+    "formMessagePlaceholder": "Briefly describe the opportunity or discussion.",
+    "formSubmitText": "Send confidential enquiry",
+    "formDisclaimer": "This prototype opens your email client; it does not transmit data to a server."
+  },
+  "seoTitle": "Birendra Mishra | Strategic Financial Leadership",
+  "seoDescription": "Strategic financial leadership for complex decisions, international growth and enduring enterprise value. Book a confidential consultation with Birendra Mishra."
+}
+

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_aspiration_pillars",
+  "info": {
+    "displayName": "Aspiration Pillar",
+    "icon": "sparkles"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

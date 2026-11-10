@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_advisory_items",
+  "info": {
+    "displayName": "Advisory Item",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

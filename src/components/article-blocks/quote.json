@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_article_blocks_quotes",
+  "info": {
+    "displayName": "Quote",
+    "icon": "quote-right"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "type": "string"
+    },
+    "cite": {
+      "type": "string"
+    }
+  }
+}
+

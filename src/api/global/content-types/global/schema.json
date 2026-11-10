@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "Global Settings",
+    "description": "Global website configuration, brand info, and footer"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "siteName": {
+      "type": "string",
+      "default": "Birendra Mishra",
+      "required": true
+    },
+    "siteTagline": {
+      "type": "string",
+      "default": "Strategic Financial Leadership"
+    },
+    "ownerName": {
+      "type": "string",
+      "default": "Birendra Mishra"
+    },
+    "ownerTitle": {
+      "type": "string",
+      "default": "Senior Executive | Global Financial Strategy, M&A and Capital Governance"
+    },
+    "contactEmail": {
+      "type": "email",
+      "default": "bbm@birendramishra.com"
+    },
+    "linkedInUrl": {
+      "type": "string",
+      "default": "https://www.linkedin.com/"
+    },
+    "xUrl": {
+      "type": "string"
+    },
+    "substackUrl": {
+      "type": "string"
+    },
+    "whatsAppNumber": {
+      "type": "string"
+    },
+    "copyrightText": {
+      "type": "text"
+    }
+  }
+}
+

@@ -1,0 +1,125 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": "Executive articles, Insights, and LinkedIn scheduled publications"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "readingTime": {
+      "type": "string",
+      "default": "5 min read"
+    },
+    "featuredArticle": {
+      "type": "boolean",
+      "default": false
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "thumbnailImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "articles"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "articles"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "articles"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    },
+    "seoKeywords": {
+      "type": "string"
+    },
+    "canonicalUrl": {
+      "type": "string"
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor.CKEditor",
+      "options": {
+        "preset": "rich",
+        "output": "HTML"
+      }
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "article-blocks.heading",
+        "article-blocks.paragraph",
+        "article-blocks.quote",
+        "article-blocks.cta-button"
+      ]
+    },
+    "openGraphImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "scheduledPublishAt": {
+      "type": "datetime"
+    },
+    "linkedInPublishStatus": {
+      "type": "enumeration",
+      "enum": ["draft", "scheduled", "processing", "published", "failed", "cancelled"],
+      "default": "draft"
+    },
+    "linkedInCaption": {
+      "type": "text"
+    },
+    "linkedInPostUrl": {
+      "type": "string"
+    },
+    "linkedInPostId": {
+      "type": "string"
+    },
+    "linkedInErrorMessage": {
+      "type": "text"
+    }
+  }
+}
+

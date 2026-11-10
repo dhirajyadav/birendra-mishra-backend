@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_capability_value_cards",
+  "info": {
+    "displayName": "Capability Value Card",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

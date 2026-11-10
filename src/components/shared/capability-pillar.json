@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_shared_capability_pillars",
+  "info": {
+    "displayName": "Capability Pillar",
+    "icon": "shield"
+  },
+  "options": {},
+  "attributes": {
+    "pillarNumber": {
+      "type": "string",
+      "required": true
+    },
+    "watermark": {
+      "type": "string",
+      "required": true
+    },
+    "tag": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "subbox1Title": {
+      "type": "string",
+      "required": true
+    },
+    "subbox1Description": {
+      "type": "text",
+      "required": true
+    },
+    "subbox2Title": {
+      "type": "string",
+      "required": true
+    },
+    "subbox2Description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

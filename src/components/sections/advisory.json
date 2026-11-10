@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_sections_advisories",
+  "info": {
+    "displayName": "Advisory Section",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Selective Advisory"
+    },
+    "title": {
+      "type": "string",
+      "default": "Experience applied to complex decisions."
+    },
+    "callout": {
+      "type": "text",
+      "default": "Strategic advice should improve the quality of the decision, not add another layer of process."
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Start a conversation"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "#contact"
+    },
+    "introText": {
+      "type": "text",
+      "default": "Designed for organisations and leadership teams seeking an experienced external perspective rather than off-the-shelf consulting packages."
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.advisory-item"
+    }
+  }
+}
+

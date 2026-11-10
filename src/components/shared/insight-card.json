@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_insight_cards",
+  "info": {
+    "displayName": "Insight Card",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "linkUrl": {
+      "type": "string",
+      "required": true
+    },
+    "linkLabel": {
+      "type": "string",
+      "default": "Read on LinkedIn"
+    }
+  }
+}
+

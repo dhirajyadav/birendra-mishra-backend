@@ -1,0 +1,80 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": {
+    "displayName": "Hero Section",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Strategic Financial Leadership"
+    },
+    "titlePrefix": {
+      "type": "string",
+      "default": "Clarity for your next"
+    },
+    "titleHighlight": {
+      "type": "string",
+      "default": "chapter."
+    },
+    "description": {
+      "type": "text",
+      "default": "Strategic financial leadership for complex decisions, international growth and enduring enterprise value."
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Explore advisory"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "#solutions"
+    },
+    "focusLabel": {
+      "type": "string",
+      "default": "Focus"
+    },
+    "focusValue": {
+      "type": "string",
+      "default": "Global Financial Strategy"
+    },
+    "coreLabel": {
+      "type": "string",
+      "default": "Core"
+    },
+    "coreValue": {
+      "type": "text",
+      "default": "Upstream Oil&Gas Finance,\nM&A and Capital Governance"
+    },
+    "experienceLabel": {
+      "type": "string",
+      "default": "Experience"
+    },
+    "experienceValue": {
+      "type": "string",
+      "default": "20+ years international"
+    },
+    "engagementLabel": {
+      "type": "string",
+      "default": "Engagement"
+    },
+    "engagementValue": {
+      "type": "string",
+      "default": "Selective Advisory & Board"
+    },
+    "discretionLabel": {
+      "type": "string",
+      "default": "Discretion"
+    },
+    "discretionValue": {
+      "type": "string",
+      "default": "Board-level confidentiality"
+    },
+    "trustItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-item"
+    }
+  }
+}
+

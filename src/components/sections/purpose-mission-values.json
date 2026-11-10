@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_sections_purpose_mission_values",
+  "info": {
+    "displayName": "Purpose Mission Values Section",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Strategic Foundations"
+    },
+    "title": {
+      "type": "string",
+      "default": "Purpose, Mission & Values"
+    },
+    "lead": {
+      "type": "text",
+      "default": "A clear set of principles for how financial leadership, judgement and professional responsibility should be exercised."
+    },
+    "purposeNumber": {
+      "type": "string",
+      "default": "01 / PURPOSE"
+    },
+    "purposeTitle": {
+      "type": "string",
+      "default": "Positive, enduring change"
+    },
+    "purposeDescription": {
+      "type": "text",
+      "default": "To help create positive, enduring change in the world."
+    },
+    "missionNumber": {
+      "type": "string",
+      "default": "02 / MISSION"
+    },
+    "missionTitle": {
+      "type": "string",
+      "default": "Distinctive, lasting improvement"
+    },
+    "missionDescription": {
+      "type": "text",
+      "default": "To support organisations in making distinctive, lasting and significant improvements in their overall performance."
+    },
+    "valuesNumber": {
+      "type": "string",
+      "default": "03 / VALUES"
+    },
+    "valuesTitle": {
+      "type": "string",
+      "default": "Professional standards & independence"
+    },
+    "valuesDescription": {
+      "type": "text",
+      "default": "Adhere to the highest professional and ethical standards; put organisations' interests ahead; preserve confidence and trust; maintain an independent perspective; and manage resources in an optimised, cost-effective manner."
+    }
+  }
+}
+

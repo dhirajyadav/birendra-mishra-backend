@@ -1,0 +1,103 @@
+{
+  "collectionName": "components_sections_meet_birendras",
+  "info": {
+    "displayName": "Meet Birendra Section",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Executive Profile"
+    },
+    "title": {
+      "type": "string",
+      "default": "Senior Executive."
+    },
+    "subheadline": {
+      "type": "string",
+      "default": "Global Financial Strategy, M&A and Capital Governance"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "photoBadgeText": {
+      "type": "string",
+      "default": "Birendra Mishra · Senior Executive"
+    },
+    "metric1Value": {
+      "type": "string",
+      "default": "20+"
+    },
+    "metric1Label": {
+      "type": "string",
+      "default": "Years"
+    },
+    "metric2Value": {
+      "type": "string",
+      "default": "6"
+    },
+    "metric2Label": {
+      "type": "string",
+      "default": "Countries"
+    },
+    "metricHighlightText": {
+      "type": "string",
+      "default": "Corporate + Operations"
+    },
+    "tagBadges": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.tag-badge"
+    },
+    "bioParagraph1": {
+      "type": "text",
+      "default": "Over more than two decades in international finance and the energy sector, I have built experience across corporate headquarters and complex international operations, with assignments spanning India, Nigeria, Italy, Kenya, South Africa and Iraq."
+    },
+    "bioParagraph2": {
+      "type": "text",
+      "default": "My career has encompassed financial leadership, corporate reporting, planning and performance management, joint ventures, governance, capital allocation and transaction support across international upstream oil & gas operations."
+    },
+    "bioParagraph3": {
+      "type": "text",
+      "default": "Working across different countries, cultures and organisational settings has taught me to connect corporate strategy with operational realities while maintaining financial discipline and effective governance. Today, that experience shapes how I approach M&A, capital allocation, financial strategy, risk and controls, technology-enabled finance and enterprise performance."
+    },
+    "capabilitiesHeading": {
+      "type": "string",
+      "default": "Strategic Capabilities & Value to Organisation"
+    },
+    "capabilitiesLead": {
+      "type": "text",
+      "default": "I collaborate closely with executive leadership to craft proactive financial frameworks, moving beyond simple financial reporting to accelerate business planning, sustainable expansion, manage international exposure, and maximise the enterprise value."
+    },
+    "capabilityValueCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.capability-value-card"
+    },
+    "philosophyQuote": {
+      "type": "text",
+      "default": "“Effective strategic financial leadership relies on vision. It requires building agile frameworks that allow organisations to pivot smoothly, capture emerging market opportunities, and turn complexity into a competitive advantage. Financial leadership is not about backward-looking compliance.”"
+    },
+    "connectTitle": {
+      "type": "string",
+      "default": "Interested in exploring strategic advisory, board, or corporate finance opportunities? Let's connect."
+    },
+    "connectDescription": {
+      "type": "text",
+      "default": "Confidential executive discussions for forward-looking enterprises and boards."
+    },
+    "connectCtaText": {
+      "type": "string",
+      "default": "Start a conversation"
+    },
+    "connectCtaUrl": {
+      "type": "string",
+      "default": "#contact"
+    }
+  }
+}
+

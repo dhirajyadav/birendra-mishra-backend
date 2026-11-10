@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_sections_insights",
+  "info": {
+    "displayName": "Insights Section",
+    "icon": "newspaper"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Insights"
+    },
+    "heading": {
+      "type": "string",
+      "default": "The Energy Perspective and Financial strategy"
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Understanding the business behind the energy headlines."
+    },
+    "lead": {
+      "type": "text",
+      "default": "Markets, geopolitics, energy transition and technology matter because of what they mean for capital allocation, financial performance, risk and long-term enterprise value."
+    },
+    "metaNote": {
+      "type": "text",
+      "default": "Articles published on LinkedIn, alongside future writing on corporate finance, M&A, FP&A, capital governance and international leadership."
+    },
+    "linkedinBtnText": {
+      "type": "string",
+      "default": "LinkedIn profile"
+    },
+    "linkedinBtnUrl": {
+      "type": "string",
+      "default": "https://www.linkedin.com/"
+    },
+    "fallbackCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.insight-card"
+    }
+  }
+}
+

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_sections_faqs",
+  "info": {
+    "displayName": "FAQ Section",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "FAQ"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Common questions"
+    },
+    "subhead": {
+      "type": "text",
+      "default": "Practical details regarding consultation scheduling, confidential discussions, and advisory arrangements."
+    },
+    "isVisible": {
+      "type": "boolean",
+      "default": false
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq-item"
+    }
+  }
+}
+

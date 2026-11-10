@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_capabilities",
+  "info": {
+    "displayName": "Capabilities Section",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Capabilities"
+    },
+    "title": {
+      "type": "string",
+      "default": "Four strategic pillars where experience meets judgement."
+    },
+    "lead": {
+      "type": "text",
+      "default": "Specialised capabilities designed for complex international enterprises, and growth organisations navigating pivotal financial decisions."
+    },
+    "pillars": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.capability-pillar"
+    }
+  }
+}
+

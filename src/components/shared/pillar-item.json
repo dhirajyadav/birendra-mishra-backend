@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_pillar_items",
+  "info": {
+    "displayName": "Pillar Item",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
+

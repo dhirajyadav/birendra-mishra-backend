@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_aspirations",
+  "info": {
+    "displayName": "Aspiration Section",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Aspiration"
+    },
+    "quote": {
+      "type": "text",
+      "default": "“Financial leadership is not merely the recording of the past—it is the strategic design of the future. Ethical financial growth and inclusion, supported by innovation for the human species. In an era accelerated by artificial intelligence and geopolitical realignments, our aspiration is to equip visionary enterprises with resilient capital frameworks, institutional agility, and decisive clarity.”"
+    },
+    "pillars": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.aspiration-pillar"
+    }
+  }
+}
+

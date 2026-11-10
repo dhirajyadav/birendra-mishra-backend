@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_article_blocks_headings",
+  "info": {
+    "displayName": "Heading",
+    "icon": "heading"
+  },
+  "options": {},
+  "attributes": {
+    "level": {
+      "type": "enumeration",
+      "enum": ["h1", "h2", "h3", "h4"],
+      "default": "h2"
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+

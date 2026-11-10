@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_page_sections_heroes",
+  "info": {
+    "displayName": "Hero Section",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Strategic Financial Leadership"
+    },
+    "title": {
+      "type": "string",
+      "default": "Clarity for your next chapter."
+    },
+    "description": {
+      "type": "text",
+      "default": "Strategic financial leadership for complex decisions, international growth and enduring enterprise value."
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Explore advisory"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "#solutions"
+    },
+    "focusValue": {
+      "type": "string",
+      "default": "Global Financial Strategy"
+    },
+    "coreValue": {
+      "type": "string",
+      "default": "Upstream Oil&Gas Finance, M&A and Capital Governance"
+    },
+    "experienceValue": {
+      "type": "string",
+      "default": "20+ years international"
+    },
+    "engagementValue": {
+      "type": "string",
+      "default": "Selective Advisory & Board"
+    },
+    "discretionValue": {
+      "type": "string",
+      "default": "Board-level confidentiality"
+    }
+  }
+}
+

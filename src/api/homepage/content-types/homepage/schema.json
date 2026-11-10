@@ -1,0 +1,75 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": "Entire Homepage Content Management with Fixed Section Components (NO Dynamic Zones)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.hero"
+    },
+    "pillars": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.pillars"
+    },
+    "meetBirendra": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.meet-birendra"
+    },
+    "purposeMissionValues": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.purpose-mission-values"
+    },
+    "aspiration": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.aspiration"
+    },
+    "capabilities": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.capabilities"
+    },
+    "insights": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.insights"
+    },
+    "advisory": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.advisory"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.faq"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.contact"
+    },
+    "seoTitle": {
+      "type": "string",
+      "default": "Birendra Mishra | Strategic Financial Leadership"
+    },
+    "seoDescription": {
+      "type": "text",
+      "default": "Strategic financial leadership for complex decisions, international growth and enduring enterprise value. Book a confidential consultation with Birendra Mishra."
+    }
+  }
+}
+

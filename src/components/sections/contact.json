@@ -1,0 +1,79 @@
+{
+  "collectionName": "components_sections_contacts",
+  "info": {
+    "displayName": "Contact Section",
+    "icon": "mail"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Connect"
+    },
+    "titleKicker": {
+      "type": "string",
+      "default": "Let’s turn complexity into opportunity"
+    },
+    "titleMain": {
+      "type": "string",
+      "default": "Confidential\nconversations."
+    },
+    "description": {
+      "type": "text",
+      "default": "Open to conversations around strategic advisory, board and executive opportunities, corporate finance, and selected collaborations. Share a short note about the context and the discussion you have in mind."
+    },
+    "execName": {
+      "type": "string",
+      "default": "Birendra Mishra"
+    },
+    "execRole": {
+      "type": "string",
+      "default": "Senior Executive | Global Financial Strategy, M&A and Capital Governance"
+    },
+    "linkedinBadgeText": {
+      "type": "string",
+      "default": "Connect on LinkedIn"
+    },
+    "linkedinUrl": {
+      "type": "string",
+      "default": "https://www.linkedin.com/"
+    },
+    "formNameLabel": {
+      "type": "string",
+      "default": "Name"
+    },
+    "formNamePlaceholder": {
+      "type": "string",
+      "default": "Your name"
+    },
+    "formEmailLabel": {
+      "type": "string",
+      "default": "Email"
+    },
+    "formEmailPlaceholder": {
+      "type": "string",
+      "default": "you@company.com"
+    },
+    "formTypeLabel": {
+      "type": "string",
+      "default": "Enquiry Type"
+    },
+    "formMessageLabel": {
+      "type": "string",
+      "default": "Message"
+    },
+    "formMessagePlaceholder": {
+      "type": "string",
+      "default": "Briefly describe the opportunity or discussion."
+    },
+    "formSubmitText": {
+      "type": "string",
+      "default": "Send confidential enquiry"
+    },
+    "formDisclaimer": {
+      "type": "string",
+      "default": "This prototype opens your email client; it does not transmit data to a server."
+    }
+  }
+}
+
