@@ -7,8 +7,8 @@
   "scripts": {
     "develop": "node scripts/run-node.js node_modules/@strapi/strapi/bin/strapi.js develop",
     "start": "node server.js",
-    "build": "node scripts/run-node.js node_modules/@strapi/strapi/bin/strapi.js build && node scripts/copy-schemas.js",
-    "postinstall": "npm rebuild better-sqlite3 --build-from-source || true",
+    "build": "node scripts/patch-ckeditor.js && node scripts/run-node.js node_modules/@strapi/strapi/bin/strapi.js build && node scripts/copy-schemas.js",
+    "postinstall": "node scripts/patch-ckeditor.js && (npm rebuild better-sqlite3 --build-from-source || true)",
     "strapi": "node scripts/run-node.js node_modules/@strapi/strapi/bin/strapi.js",
     "seed": "node scripts/seed.js",
     "probe": "node scripts/probe-strapi.js"
