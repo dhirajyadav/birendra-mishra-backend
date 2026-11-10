@@ -425,17 +425,22 @@ export default {
         strapi.log.debug(`Content Manager layout update notice: ${cmErr.message}`);
       }
 
-      // 7. Seed Homepage Single Type if empty
+      // 7. Seed/Enrich Homepage Single Type if empty or partially empty
       try {
         let existingHomepage = null;
         try {
-          existingHomepage = await strapi.documents('api::homepage.homepage').findFirst();
+          existingHomepage = await strapi.documents('api::homepage.homepage').findFirst({
+            populate: '*',
+          });
         } catch {
-          existingHomepage = await strapi.entityService.findMany('api::homepage.homepage');
+          existingHomepage = await strapi.entityService.findMany('api::homepage.homepage', {
+            populate: '*',
+          });
         }
 
+        const initialHomepageData = require('./data/initial-homepage.json');
+
         if (!existingHomepage) {
-          const initialHomepageData = require('./data/initial-homepage.json');
           if (strapi.documents) {
             await strapi.documents('api::homepage.homepage').create({
               data: initialHomepageData,
@@ -449,10 +454,38 @@ export default {
               },
             });
           }
-          strapi.log.info('✓ Homepage Single Type seeded with complete finalized content.');
+          strapi.log.info('✓ Homepage Single Type created with complete finalized content.');
+        } else if (!existingHomepage.meetBirendra || !existingHomepage.advisory || !existingHomepage.capabilities) {
+          strapi.log.info('Homepage exists but sections are blank. Enriching all 10 sections with initial content...');
+          const docId = existingHomepage.documentId || existingHomepage.id;
+
+          const mergedHero = {
+            ...initialHomepageData.hero,
+            ...(existingHomepage.hero || {}),
+          };
+
+          if (strapi.documents) {
+            await strapi.documents('api::homepage.homepage').update({
+              documentId: docId,
+              data: {
+                ...initialHomepageData,
+                hero: mergedHero,
+              },
+              status: 'published',
+            });
+          } else {
+            await strapi.entityService.update('api::homepage.homepage', existingHomepage.id, {
+              data: {
+                ...initialHomepageData,
+                hero: mergedHero,
+                publishedAt: new Date(),
+              },
+            });
+          }
+          strapi.log.info('✓ Homepage Single Type successfully populated with all 10 sections & SEO data!');
         }
       } catch (hpErr: any) {
-        strapi.log.debug(`Homepage seeding notice: ${hpErr.message}`);
+        strapi.log.warn(`Homepage seeding notice: ${hpErr.message}`);
       }
     } catch (err: any) {
       strapi.log.error(`[Strapi Bootstrap Warning]: ${err.message}`);
