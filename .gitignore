@@ -16,9 +16,9 @@ build/
 *.sqlite
 *.sqlite3
 
-# Uploads (keep .gitkeep so folder exists, but ignore uploaded files)
-public/uploads/*
-!public/uploads/.gitkeep
+# Uploads: Keep uploaded default assets tracked so production deployment has them
+public/uploads/*.tmp
+!public/uploads/
 
 # Environment variables & secrets (do not commit secrets!)
 .env

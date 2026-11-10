@@ -23,8 +23,11 @@ export default [
       origin: [
         'https://birendramishra.com',
         'https://www.birendramishra.com',
+        'https://teal-ram-242624.hostingersite.com',
+        'https://sienna-ibis-828899.hostingersite.com',
         'http://localhost:3000',
         'http://127.0.0.1:3000',
+        '*',
       ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
