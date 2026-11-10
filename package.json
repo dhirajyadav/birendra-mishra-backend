@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Strapi 5 Headless CMS & LinkedIn Publishing Backend for Birendra Mishra",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "develop": "node scripts/run-node.js node_modules/@strapi/strapi/bin/strapi.js develop",
-    "start": "node scripts/run-node.js node_modules/@strapi/strapi/bin/strapi.js start",
+    "start": "node server.js",
     "build": "node scripts/run-node.js node_modules/@strapi/strapi/bin/strapi.js build && node scripts/copy-schemas.js",
     "strapi": "node scripts/run-node.js node_modules/@strapi/strapi/bin/strapi.js",
     "seed": "node scripts/seed.js",

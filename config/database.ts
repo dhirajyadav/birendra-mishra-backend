@@ -1,4 +1,16 @@
 import path from 'path';
+import fs from 'fs';
+
+function getProjectRoot(startDir: string): string {
+  let dir = startDir;
+  while (dir !== path.dirname(dir)) {
+    if (fs.existsSync(path.join(dir, 'package.json'))) {
+      return dir;
+    }
+    dir = path.dirname(dir);
+  }
+  return startDir;
+}
 
 export default ({ env }: { env: any }) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
@@ -29,14 +41,15 @@ export default ({ env }: { env: any }) => {
   }
 
   // SQLite for local testing / development
+  const projectRoot = getProjectRoot(__dirname);
+  const dbFile = env('DATABASE_FILENAME', '.tmp/data.db');
   return {
     connection: {
       client: 'sqlite',
       connection: {
-        filename: path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+        filename: path.isAbsolute(dbFile) ? dbFile : path.resolve(projectRoot, dbFile),
       },
       useNullAsDefault: true,
     },
   };
 };
-
