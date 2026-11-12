@@ -23,6 +23,7 @@ export default [
       origin: [
         'https://birendramishra.com',
         'https://www.birendramishra.com',
+        'https://admin.birendramishra.com',
         'https://teal-ram-242624.hostingersite.com',
         'https://sienna-ibis-828899.hostingersite.com',
         'http://localhost:3000',

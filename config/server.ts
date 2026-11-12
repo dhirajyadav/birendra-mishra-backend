@@ -3,7 +3,7 @@ import cronTasks from './cron-tasks';
 export default ({ env }: { env: any }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
-  url: env('PUBLIC_URL', ''),
+  url: env('PUBLIC_URL', 'https://admin.birendramishra.com'),
   app: {
     keys: env.array('APP_KEYS', ['testKeyA1234567890==', 'testKeyB1234567890==']),
   },
