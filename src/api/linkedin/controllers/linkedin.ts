@@ -181,4 +181,28 @@ export default ({ strapi }: { strapi: any }) => ({
       ctx.badRequest(err.message);
     }
   },
+
+  async cleanupDummyArticles(ctx: any) {
+    try {
+      const dummySlugs = [
+        'from-headline-to-financial-consequence',
+        'capital-through-a-cfo-lens',
+        'strategy-beyond-the-numbers',
+      ];
+      for (const dSlug of dummySlugs) {
+        await strapi.db.query('api::article.article').deleteMany({
+          where: { slug: dSlug },
+        });
+      }
+      await strapi.db.query('api::article.article').deleteMany({
+        where: { documentId: 'cn89hor982fls5pg9upp6i2y' },
+      });
+      ctx.send({
+        success: true,
+        message: 'Legacy dummy articles deleted successfully. Now only your authentic articles remain in the database.',
+      });
+    } catch (err: any) {
+      ctx.badRequest(err.message);
+    }
+  },
 });

@@ -64,6 +64,14 @@ export default {
         auth: false,
       },
     },
+    {
+      method: 'GET',
+      path: '/linkedin/cleanup-dummy',
+      handler: 'linkedin.cleanupDummyArticles',
+      config: {
+        auth: false,
+      },
+    },
   ],
 };
 
