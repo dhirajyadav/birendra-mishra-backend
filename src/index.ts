@@ -26,7 +26,7 @@ export default {
                 where: { documentId: docId },
               });
 
-              if (article && article.postToLinkedIn && article.linkedInPublishStatus !== 'published') {
+              if (article && article.postToLinkedIn) {
                 const hasFutureSchedule =
                   article.scheduledPublishAt &&
                   new Date(article.scheduledPublishAt).getTime() > Date.now();

@@ -230,6 +230,31 @@ export default ({ strapi }: { strapi: any }) => ({
         }
 
         if (!res && lastErr) {
+          const lastMsg = lastErr.response?.data?.message || lastErr.message || '';
+          if (lastMsg.includes('duplicate')) {
+            strapi.log.info('[LinkedIn API]: Duplicate detected on re-post. Retrying with unique timestamp marker...');
+            payload.commentary = `${payload.commentary}\n\n[Re-published: ${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}]`;
+            for (const version of candidateVersions) {
+              try {
+                res = await axios.post('https://api.linkedin.com/rest/posts', payload, {
+                  headers: {
+                    Authorization: `Bearer ${token?.accessToken}`,
+                    'LinkedIn-Version': version,
+                    'X-Restli-Protocol-Version': '2.0.0',
+                    'Content-Type': 'application/json',
+                  },
+                });
+                strapi.log.info(`[LinkedIn REST API]: Successfully re-posted with unique marker using version ${version}!`);
+                break;
+              } catch (retryErr: any) {
+                lastErr = retryErr;
+                continue;
+              }
+            }
+          }
+        }
+
+        if (!res && lastErr) {
           throw lastErr;
         }
 
