@@ -59,6 +59,7 @@ export interface PageSectionsHero extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
+    backgroundImage: Schema.Attribute.Media<'images'>;
     coreValue: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Upstream Oil&Gas Finance, M&A and Capital Governance'>;
     ctaText: Schema.Attribute.String &
@@ -200,6 +201,7 @@ export interface SectionsHero extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
+    backgroundImage: Schema.Attribute.Media<'images'>;
     coreLabel: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Core'>;
     coreValue: Schema.Attribute.Text &
       Schema.Attribute.DefaultTo<'Upstream Oil&Gas Finance,\nM&A and Capital Governance'>;

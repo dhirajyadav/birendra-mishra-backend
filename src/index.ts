@@ -1,5 +1,81 @@
 export default {
-  register(/*{ strapi }*/) {},
+  register({ strapi }: { strapi: any }) {
+    // Document service middleware to automate LinkedIn publishing and scheduling
+    if (strapi.documents && typeof strapi.documents.use === 'function') {
+      strapi.documents.use(async (context: any, next: () => Promise<any>) => {
+        const isArticle = context.uid === 'api::article.article';
+
+        // When creating or updating an article with future schedule time
+        if (isArticle && (context.action === 'create' || context.action === 'update')) {
+          const data = context.params?.data;
+          if (data && data.postToLinkedIn) {
+            if (data.scheduledPublishAt && new Date(data.scheduledPublishAt).getTime() > Date.now()) {
+              data.linkedInPublishStatus = 'scheduled';
+            }
+          }
+        }
+
+        const result = await next();
+
+        // When publishing an article (Direct Publish or Future Schedule check)
+        if (isArticle && context.action === 'publish') {
+          try {
+            const docId = context.params?.documentId || result?.documentId;
+            if (docId) {
+              const article = await strapi.documents('api::article.article').findOne({
+                documentId: docId,
+                status: 'published',
+              });
+
+              if (article && article.postToLinkedIn) {
+                const hasFutureSchedule =
+                  article.scheduledPublishAt &&
+                  new Date(article.scheduledPublishAt).getTime() > Date.now();
+
+                if (hasFutureSchedule) {
+                  // Mode B: Scheduled Time
+                  await strapi.db.query('api::article.article').updateMany({
+                    where: { documentId: docId },
+                    data: {
+                      linkedInPublishStatus: 'scheduled',
+                      linkedInErrorMessage: null,
+                    },
+                  });
+                  strapi.log.info(
+                    `[LinkedIn Scheduler]: Article "${article.title}" scheduled for ${article.scheduledPublishAt}`
+                  );
+                } else {
+                  // Mode A: Direct Publish (Immediately)
+                  strapi.log.info(
+                    `[LinkedIn Direct Publish]: Publishing article "${article.title}" to LinkedIn immediately...`
+                  );
+                  const linkedinService = strapi.service('api::linkedin.linkedin');
+                  if (linkedinService) {
+                    const caption =
+                      article.linkedInCaption ||
+                      `${article.title}\n\n${article.excerpt || article.shortDescription || ''}\n\nRead the full strategic analysis: https://birendramishra.com/insights/${article.slug}`;
+
+                    await linkedinService.publishPost({
+                      articleId: article.id,
+                      caption,
+                      articleUrl: `https://birendramishra.com/insights/${article.slug}`,
+                    });
+                    strapi.log.info(
+                      `[LinkedIn Direct Publish]: Successfully published article "${article.title}" to LinkedIn!`
+                    );
+                  }
+                }
+              }
+            }
+          } catch (postErr: any) {
+            strapi.log.error(`[LinkedIn Publish Error]: ${postErr.message}`);
+          }
+        }
+
+        return result;
+      });
+    }
+  },
 
   async bootstrap({ strapi }: { strapi: any }) {
     try {
@@ -380,19 +456,108 @@ export default {
               { name: 'seoKeywords', size: 6 },
               { name: 'openGraphImage', size: 6 },
             ],
+
+            // SECTION 3: LINKEDIN PUBLISHING & AUTOMATION
+            [
+              { name: 'postToLinkedIn', size: 6 },
+              { name: 'scheduledPublishAt', size: 6 },
+            ],
             [
               { name: 'linkedInPublishStatus', size: 6 },
-              { name: 'scheduledPublishAt', size: 6 },
+              { name: 'linkedInPostUrl', size: 6 },
             ],
             [
               { name: 'linkedInCaption', size: 12 },
             ],
             [
-              { name: 'linkedInPostUrl', size: 12 },
+              { name: 'linkedInErrorMessage', size: 12 },
             ],
           ];
 
           if (!config.metadatas) config.metadatas = {};
+          config.metadatas.postToLinkedIn = {
+            edit: {
+              label: 'Post to LinkedIn? (चेक करें)',
+              description: 'Tick this box to publish to LinkedIn. If "Scheduled LinkedIn Time" is left empty, it publishes directly/immediately when saved/published. If a future time is set, it publishes automatically at that time.',
+              visible: true,
+              editable: true,
+            },
+            list: {
+              label: 'LinkedIn',
+              searchable: true,
+              sortable: true,
+            },
+          };
+
+          config.metadatas.scheduledPublishAt = {
+            edit: {
+              label: 'Scheduled LinkedIn Time (Optional)',
+              description: 'Leave empty for Direct Publish immediately. Or pick a future date and time to publish automatically.',
+              visible: true,
+              editable: true,
+            },
+            list: {
+              label: 'Scheduled For',
+              searchable: true,
+              sortable: true,
+            },
+          };
+
+          config.metadatas.linkedInPublishStatus = {
+            edit: {
+              label: 'LinkedIn Publishing Status',
+              description: 'Status: draft, scheduled, processing, published, or failed.',
+              visible: true,
+              editable: true,
+            },
+            list: {
+              label: 'LinkedIn Status',
+              searchable: true,
+              sortable: true,
+            },
+          };
+
+          config.metadatas.linkedInPostUrl = {
+            edit: {
+              label: 'Published LinkedIn Post URL',
+              description: 'Direct link to the published post on LinkedIn.',
+              visible: true,
+              editable: false,
+            },
+            list: {
+              label: 'LinkedIn URL',
+              searchable: false,
+              sortable: false,
+            },
+          };
+
+          config.metadatas.linkedInCaption = {
+            edit: {
+              label: 'Custom LinkedIn Caption / Text (Optional)',
+              description: 'Custom commentary. If left empty, automatically formats: Article Title + Excerpt + Article Link.',
+              visible: true,
+              editable: true,
+            },
+            list: {
+              label: 'LinkedIn Caption',
+              searchable: false,
+              sortable: false,
+            },
+          };
+
+          config.metadatas.linkedInErrorMessage = {
+            edit: {
+              label: 'LinkedIn Error Details (if failed)',
+              description: 'Displays exact error message from LinkedIn API if publishing fails.',
+              visible: true,
+              editable: false,
+            },
+            list: {
+              label: 'Error',
+              searchable: false,
+              sortable: false,
+            },
+          };
           config.metadatas.content = {
             edit: {
               label: 'Article Body (Rich Text Editor — Text, Images & Videos)',

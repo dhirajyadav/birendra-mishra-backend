@@ -422,6 +422,8 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     openGraphImage: Schema.Attribute.Media<'images'>;
+    postToLinkedIn: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
     readingTime: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'5 min read'>;

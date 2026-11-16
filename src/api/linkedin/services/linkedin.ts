@@ -14,7 +14,7 @@ export default ({ strapi }: { strapi: any }) => ({
       clientId: process.env.LINKEDIN_CLIENT_ID || '',
       clientSecret: process.env.LINKEDIN_CLIENT_SECRET || '',
       redirectUri:
-        process.env.LINKEDIN_REDIRECT_URI || 'https://api.birendramishra.com/api/linkedin/callback',
+        process.env.LINKEDIN_REDIRECT_URI || 'https://admin.birendramishra.com/api/linkedin/callback',
       scopes: ['openid', 'profile', 'email', 'w_member_social'],
       isMockMode: !process.env.LINKEDIN_CLIENT_ID || process.env.LINKEDIN_MOCK_MODE === 'true',
     };
@@ -141,7 +141,7 @@ export default ({ strapi }: { strapi: any }) => ({
     articleUrl,
     imageUrl,
   }: {
-    articleId?: number;
+    articleId?: number | string;
     caption: string;
     articleUrl?: string;
     imageUrl?: string;
@@ -150,7 +150,19 @@ export default ({ strapi }: { strapi: any }) => ({
     const token = await this.getStoredToken();
 
     if (!config.isMockMode && (!token || Date.now() > token.expiresAt)) {
-      throw new Error('LinkedIn account not connected or authorization token expired.');
+      const err = new Error('LinkedIn account not connected or authorization token expired.');
+      if (articleId) {
+        try {
+          await strapi.db.query('api::article.article').update({
+            where: typeof articleId === 'number' ? { id: articleId } : { documentId: articleId },
+            data: {
+              linkedInPublishStatus: 'failed',
+              linkedInErrorMessage: err.message,
+            },
+          });
+        } catch {}
+      }
+      throw err;
     }
 
     let postUrl = '';
@@ -200,6 +212,17 @@ export default ({ strapi }: { strapi: any }) => ({
       } catch (err: any) {
         const errorDetail = err.response?.data?.message || err.message;
         strapi.log.error(`[LinkedIn REST API Error]: ${errorDetail}`);
+        if (articleId) {
+          try {
+            await strapi.db.query('api::article.article').update({
+              where: typeof articleId === 'number' ? { id: articleId } : { documentId: articleId },
+              data: {
+                linkedInPublishStatus: 'failed',
+                linkedInErrorMessage: errorDetail,
+              },
+            });
+          } catch {}
+        }
         throw new Error(`LinkedIn API rejected post: ${errorDetail}`);
       }
     }
@@ -207,8 +230,10 @@ export default ({ strapi }: { strapi: any }) => ({
     // Update article if articleId was provided
     if (articleId) {
       try {
-        await strapi.entityService.update('api::article.article', articleId, {
+        await strapi.db.query('api::article.article').update({
+          where: typeof articleId === 'number' ? { id: articleId } : { documentId: articleId },
           data: {
+            postToLinkedIn: false,
             linkedInPublishStatus: 'published',
             linkedInPostUrl: postUrl,
             linkedInPostId: postId,
@@ -230,8 +255,8 @@ export default ({ strapi }: { strapi: any }) => ({
   async processScheduledQueue() {
     const now = new Date();
     try {
-      const scheduledArticles = await strapi.entityService.findMany('api::article.article', {
-        filters: {
+      const scheduledArticles = await strapi.db.query('api::article.article').findMany({
+        where: {
           linkedInPublishStatus: 'scheduled',
           scheduledPublishAt: {
             $lte: now.toISOString(),
@@ -247,7 +272,8 @@ export default ({ strapi }: { strapi: any }) => ({
 
       for (const article of scheduledArticles) {
         try {
-          await strapi.entityService.update('api::article.article', article.id, {
+          await strapi.db.query('api::article.article').update({
+            where: { id: article.id },
             data: { linkedInPublishStatus: 'processing' },
           });
 
@@ -264,7 +290,8 @@ export default ({ strapi }: { strapi: any }) => ({
           strapi.log.info(`[LinkedIn Queue]: Published article ${article.id} -> ${result.postUrl}`);
         } catch (postError: any) {
           strapi.log.error(`[LinkedIn Queue Failure on Article ${article.id}]: ${postError.message}`);
-          await strapi.entityService.update('api::article.article', article.id, {
+          await strapi.db.query('api::article.article').update({
+            where: { id: article.id },
             data: {
               linkedInPublishStatus: 'failed',
               linkedInErrorMessage: postError.message,
