@@ -45,6 +45,12 @@
     "discretionValue": {
       "type": "string",
       "default": "Board-level confidentiality"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     }
   }
 }
