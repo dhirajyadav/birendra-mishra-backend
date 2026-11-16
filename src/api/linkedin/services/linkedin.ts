@@ -198,14 +198,45 @@ export default ({ strapi }: { strapi: any }) => ({
           };
         }
 
-        const res = await axios.post('https://api.linkedin.com/rest/posts', payload, {
-          headers: {
-            Authorization: `Bearer ${token?.accessToken}`,
-            'LinkedIn-Version': '202401',
-            'X-Restli-Protocol-Version': '2.0.0',
-            'Content-Type': 'application/json',
-          },
-        });
+        const candidateVersions = [
+          process.env.LINKEDIN_API_VERSION,
+          '202501',
+          '202506',
+          '202511',
+          '202512',
+          '202601',
+          '202604',
+        ].filter(Boolean) as string[];
+
+        let res: any = null;
+        let lastErr: any = null;
+
+        for (const version of candidateVersions) {
+          try {
+            res = await axios.post('https://api.linkedin.com/rest/posts', payload, {
+              headers: {
+                Authorization: `Bearer ${token?.accessToken}`,
+                'LinkedIn-Version': version,
+                'X-Restli-Protocol-Version': '2.0.0',
+                'Content-Type': 'application/json',
+              },
+            });
+            strapi.log.info(`[LinkedIn REST API]: Successfully posted to LinkedIn using version ${version}!`);
+            break;
+          } catch (vErr: any) {
+            lastErr = vErr;
+            const errMsg = vErr.response?.data?.message || vErr.message || '';
+            if (errMsg.includes('not active') || vErr.response?.status === 426) {
+              strapi.log.warn(`[LinkedIn API Version Notice]: Version ${version} not active, trying next...`);
+              continue;
+            }
+            throw vErr;
+          }
+        }
+
+        if (!res && lastErr) {
+          throw lastErr;
+        }
 
         postId = res.headers['x-restli-id'] || res.data?.id || `urn:li:share:${Date.now()}`;
         postUrl = `https://www.linkedin.com/feed/update/${postId}/`;

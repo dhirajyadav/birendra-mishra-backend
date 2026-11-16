@@ -119,7 +119,9 @@ export default ({ strapi }: { strapi: any }) => ({
       let finalUrl = articleUrl;
 
       if (articleId) {
-        const article = await strapi.entityService.findOne('api::article.article', articleId);
+        const article = await strapi.db.query('api::article.article').findOne({
+          where: typeof articleId === 'number' ? { id: articleId } : { documentId: articleId },
+        });
         if (article) {
           finalCaption =
             caption ||
