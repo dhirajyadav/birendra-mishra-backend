@@ -17,17 +17,16 @@ export default {
 
         const result = await next();
 
-        // When publishing an article (Direct Publish or Future Schedule check)
-        if (isArticle && context.action === 'publish') {
+        // When saving (draft/published) or publishing an article
+        if (isArticle && (context.action === 'publish' || context.action === 'update' || context.action === 'create')) {
           try {
             const docId = context.params?.documentId || result?.documentId;
             if (docId) {
-              const article = await strapi.documents('api::article.article').findOne({
-                documentId: docId,
-                status: 'published',
+              const article = await strapi.db.query('api::article.article').findOne({
+                where: { documentId: docId },
               });
 
-              if (article && article.postToLinkedIn) {
+              if (article && article.postToLinkedIn && article.linkedInPublishStatus !== 'published') {
                 const hasFutureSchedule =
                   article.scheduledPublishAt &&
                   new Date(article.scheduledPublishAt).getTime() > Date.now();

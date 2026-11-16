@@ -175,9 +175,14 @@ export default ({ strapi }: { strapi: any }) => ({
     } else {
       // Official LinkedIn REST Posts API
       try {
-        const payload: any = {
+        const fullCommentary =
+          articleUrl && !caption.includes(articleUrl)
+            ? `${caption}\n\nRead more: ${articleUrl}`
+            : caption;
+
+        let payload: any = {
           author: token?.memberUrn,
-          commentary: caption,
+          commentary: fullCommentary,
           visibility: 'PUBLIC',
           distribution: {
             feedDistribution: 'MAIN_FEED',
@@ -187,16 +192,6 @@ export default ({ strapi }: { strapi: any }) => ({
           lifecycleState: 'PUBLISHED',
           isReshareDisabledByAuthor: false,
         };
-
-        if (articleUrl) {
-          payload.content = {
-            article: {
-              source: articleUrl,
-              title: caption.slice(0, 80),
-              description: caption.slice(0, 200),
-            },
-          };
-        }
 
         const candidateVersions = [
           process.env.LINKEDIN_API_VERSION,
