@@ -115,6 +115,9 @@
     "linkedInCaption": {
       "type": "text"
     },
+    "linkedInHashtags": {
+      "type": "string"
+    },
     "linkedInPostUrl": {
       "type": "string"
     },

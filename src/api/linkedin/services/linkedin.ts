@@ -49,6 +49,15 @@ function generateHashtags(article: any): string[] {
 
   const tagSet = new Set<string>();
 
+  // 0. Custom LinkedIn Hashtags field if entered in Strapi
+  if (article.linkedInHashtags && typeof article.linkedInHashtags === 'string') {
+    const customTags = article.linkedInHashtags.split(/[\s,;]+/).filter(Boolean);
+    for (const ct of customTags) {
+      const cleaned = cleanToHashtag(ct);
+      if (cleaned) tagSet.add(cleaned);
+    }
+  }
+
   // 1. Article tags relation
   if (Array.isArray(article.tags)) {
     for (const tag of article.tags) {
@@ -413,6 +422,17 @@ export default ({ strapi }: { strapi: any }) => ({
         articleData.featuredImage?.url ||
         articleData.openGraphImage?.url ||
         articleData.thumbnailImage?.url;
+
+      // If featured images are empty, fallback to first image found in article content body
+      if (!finalImageUrl && articleData.content && typeof articleData.content === 'string') {
+        const imgMatch = articleData.content.match(/<img[^>]+src=["']([^"']+)["']/i);
+        if (imgMatch && imgMatch[1]) {
+          finalImageUrl = imgMatch[1];
+          strapi.log.info(
+            `[LinkedIn Service]: Auto-detected image from article content body: ${finalImageUrl}`
+          );
+        }
+      }
     }
 
     // 3. Generate Smart Executive Hashtags

@@ -409,6 +409,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     featuredImage: Schema.Attribute.Media<'images'>;
     linkedInCaption: Schema.Attribute.Text;
     linkedInErrorMessage: Schema.Attribute.Text;
+    linkedInHashtags: Schema.Attribute.String;
     linkedInPostId: Schema.Attribute.String;
     linkedInPostUrl: Schema.Attribute.String;
     linkedInPublishStatus: Schema.Attribute.Enumeration<
