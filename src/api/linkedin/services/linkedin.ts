@@ -47,18 +47,23 @@ function cleanToHashtag(input: string): string {
 function generateHashtags(article: any): string[] {
   if (!article) return ['#theEnergyPerspective', '#Leadership', '#CorporateFinance', '#Strategy'];
 
-  const tagSet = new Set<string>();
+  // 1. If user explicitly provided custom hashtags in the dedicated LinkedIn Hashtags field, use them directly!
+  if (article.linkedInHashtags && typeof article.linkedInHashtags === 'string' && article.linkedInHashtags.trim()) {
+    const customList = article.linkedInHashtags
+      .split(/[\s,;]+/)
+      .map((t: string) => t.trim())
+      .filter(Boolean)
+      .map((t: string) => (t.startsWith('#') ? t : `#${t}`));
 
-  // 0. Custom LinkedIn Hashtags field if entered in Strapi
-  if (article.linkedInHashtags && typeof article.linkedInHashtags === 'string') {
-    const customTags = article.linkedInHashtags.split(/[\s,;]+/).filter(Boolean);
-    for (const ct of customTags) {
-      const cleaned = cleanToHashtag(ct);
-      if (cleaned) tagSet.add(cleaned);
+    if (customList.length > 0) {
+      return Array.from(new Set(customList));
     }
   }
 
-  // 1. Article tags relation
+  // 2. Otherwise auto-generate from article tags, category, SEO keywords, and brand signature defaults
+  const tagSet = new Set<string>();
+
+  // Article tags relation
   if (Array.isArray(article.tags)) {
     for (const tag of article.tags) {
       const name = typeof tag === 'string' ? tag : tag?.name || tag?.slug;

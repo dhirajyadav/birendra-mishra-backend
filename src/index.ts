@@ -299,6 +299,9 @@ export default {
               { name: 'linkedInCaption', size: 12 },
             ],
             [
+              { name: 'linkedInHashtags', size: 12 },
+            ],
+            [
               { name: 'linkedInErrorMessage', size: 12 },
             ],
           ];
@@ -370,6 +373,22 @@ export default {
             list: {
               label: 'LinkedIn Caption',
               searchable: false,
+              sortable: false,
+            },
+          };
+
+          config.metadatas.linkedInHashtags = {
+            edit: {
+              label: 'LinkedIn #Hashtags (Optional)',
+              description:
+                'Custom #hashtags for LinkedIn post (e.g. #leadership #energy #powersector #RACIE #strategy). If left empty, automatically generated from article topics & keywords.',
+              placeholder: '#leadership #energy #strategy #theEnergyPerspective',
+              visible: true,
+              editable: true,
+            },
+            list: {
+              label: 'LinkedIn Hashtags',
+              searchable: true,
               sortable: false,
             },
           };
