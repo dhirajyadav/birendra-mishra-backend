@@ -24,6 +24,7 @@ export default {
             if (docId) {
               const article = await strapi.db.query('api::article.article').findOne({
                 where: { documentId: docId },
+                populate: ['featuredImage', 'openGraphImage', 'thumbnailImage', 'tags', 'category'],
               });
 
               if (article && article.postToLinkedIn) {
@@ -50,14 +51,17 @@ export default {
                   );
                   const linkedinService = strapi.service('api::linkedin.linkedin');
                   if (linkedinService) {
-                    const caption =
-                      article.linkedInCaption ||
-                      `${article.title}\n\n${article.excerpt || article.shortDescription || ''}\n\nRead the full strategic analysis: https://birendramishra.com/insights/${article.slug}`;
+                    const articleUrl = `https://birendramishra.com/insights/${article.slug}`;
+                    const featuredImgUrl =
+                      article.featuredImage?.url ||
+                      article.openGraphImage?.url ||
+                      article.thumbnailImage?.url;
 
                     await linkedinService.publishPost({
                       articleId: article.id,
-                      caption,
-                      articleUrl: `https://birendramishra.com/insights/${article.slug}`,
+                      caption: article.linkedInCaption || '',
+                      articleUrl,
+                      imageUrl: featuredImgUrl,
                     });
                     strapi.log.info(
                       `[LinkedIn Direct Publish]: Successfully published article "${article.title}" to LinkedIn!`

@@ -117,17 +117,25 @@ export default ({ strapi }: { strapi: any }) => ({
     try {
       let finalCaption = caption;
       let finalUrl = articleUrl;
+      let finalImageUrl = imageUrl;
 
       if (articleId) {
         const article = await strapi.db.query('api::article.article').findOne({
           where: typeof articleId === 'number' ? { id: articleId } : { documentId: articleId },
+          populate: ['featuredImage', 'openGraphImage', 'thumbnailImage', 'tags', 'category'],
         });
         if (article) {
           finalCaption =
             caption ||
             article.linkedInCaption ||
-            `${article.title}\n\n${article.excerpt || article.shortDescription || ''}\n\nRead more: https://birendramishra.com/insights/${article.slug}`;
+            `${article.title}\n\n${article.excerpt || article.shortDescription || ''}`;
           finalUrl = articleUrl || `https://birendramishra.com/insights/${article.slug}`;
+          if (!finalImageUrl) {
+            finalImageUrl =
+              article.featuredImage?.url ||
+              article.openGraphImage?.url ||
+              article.thumbnailImage?.url;
+          }
         }
       }
 
@@ -135,7 +143,7 @@ export default ({ strapi }: { strapi: any }) => ({
         articleId,
         caption: finalCaption,
         articleUrl: finalUrl,
-        imageUrl,
+        imageUrl: finalImageUrl,
       });
 
       ctx.send(result);

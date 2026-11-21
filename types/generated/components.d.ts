@@ -266,16 +266,46 @@ export interface SectionsMeetBirendra extends Struct.ComponentSchema {
     icon: 'user';
   };
   attributes: {
-    bioParagraph1: Schema.Attribute.Text &
-      Schema.Attribute.DefaultTo<'Over more than two decades in international finance and the energy sector, I have built experience across corporate headquarters and complex international operations, with assignments spanning India, Nigeria, Italy, Kenya, South Africa and Iraq.'>;
-    bioParagraph2: Schema.Attribute.Text &
-      Schema.Attribute.DefaultTo<'My career has encompassed financial leadership, corporate reporting, planning and performance management, joint ventures, governance, capital allocation and transaction support across international upstream oil & gas operations.'>;
-    bioParagraph3: Schema.Attribute.Text &
-      Schema.Attribute.DefaultTo<'Working across different countries, cultures and organisational settings has taught me to connect corporate strategy with operational realities while maintaining financial discipline and effective governance. Today, that experience shapes how I approach M&A, capital allocation, financial strategy, risk and controls, technology-enabled finance and enterprise performance.'>;
-    capabilitiesHeading: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Strategic Capabilities & Value to Organisation'>;
-    capabilitiesLead: Schema.Attribute.Text &
-      Schema.Attribute.DefaultTo<'I collaborate closely with executive leadership to craft proactive financial frameworks, moving beyond simple financial reporting to accelerate business planning, sustainable expansion, manage international exposure, and maximise the enterprise value.'>;
+    bioParagraph1: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'standard';
+        }
+      >;
+    bioParagraph2: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'standard';
+        }
+      >;
+    bioParagraph3: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'standard';
+        }
+      >;
+    capabilitiesHeading: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'light';
+        }
+      >;
+    capabilitiesLead: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'standard';
+        }
+      >;
     capabilityValueCards: Schema.Attribute.Component<
       'shared.capability-value-card',
       true
